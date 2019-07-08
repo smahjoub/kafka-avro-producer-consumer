@@ -3,6 +3,7 @@ package com.smahjoub.avroproducer;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.smahjoub.avroproducer.injection.AvroProducerModule;
+import com.smahjoub.avroproducer.services.IKafkaProducer;
 import org.apache.log4j.Logger;
 
 public class Application {
@@ -16,6 +17,8 @@ public class Application {
 
         final AvroProducerModule injectorModule = new AvroProducerModule();
         final Injector injector = Guice.createInjector(injectorModule);
+        final IKafkaProducer kafkaProducer = injector.getInstance(IKafkaProducer.class);
 
+        kafkaProducer.run();
     }
 }

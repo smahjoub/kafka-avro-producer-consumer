@@ -14,10 +14,40 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <jdk.version>1.8</jdk.version>
         <main.class>com.smahjoub.avroproducer.Application</main.class>
+        <kafka.version>2.0.0</kafka.version>
+        <avro.version>1.8.2</avro.version>
+        <confluent.version>3.3.1</confluent.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>confluent</id>
+            <url>http://packages.confluent.io/maven</url>
+        </repository>
+    </repositories>
 
     <dependencies>
+        <!-- Avro schema -->
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+            <version>${avro.version}</version>
+        </dependency>
+
+        <!-- Kafka Client -->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>${kafka.version}</version>
+        </dependency>
+
+        <!-- Kafka Avro Serializer -->
+        <dependency>
+            <groupId>io.confluent</groupId>
+            <artifactId>kafka-avro-serializer</artifactId>
+            <version>${confluent.version}</version>
+        </dependency>
+
 
         <!-- Dependency injection -->
         <dependency>
@@ -26,7 +56,7 @@
             <version>4.1.0</version>
         </dependency>
 
-        <!-- Logging !-->
+        <!-- Logging -->
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
