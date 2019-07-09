@@ -4,11 +4,11 @@ public class KafkaConfiguration {
 
     private String clientId = "AvroProducer";
 
-    private String kafkaBrokers = "localhost.finaxys.com:6667";
+    private String kafkaBrokers = "localhost:9092";
 
     private String topicName = "NEW_EMPLOYEES";
 
-    private String schemaRegistry = "http://localhost.finaxys.com:8081";
+    private String schemaRegistry = "localhost:8081";
 
     public KafkaConfiguration(){
 

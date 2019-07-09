@@ -10,7 +10,6 @@ import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
 import java.util.Arrays;
-import java.util.stream.IntStream;
 
 public class RandomKafkaProducer implements IKafkaProducer {
 
@@ -37,9 +36,7 @@ public class RandomKafkaProducer implements IKafkaProducer {
                 .build();
 
 
-        IntStream.range(1, 2).forEach(index->{
-            producer.send(new ProducerRecord<>(kafkaConfiguration.getTopicName(), 1L * index, randomEmployee));
-        });
+        producer.send(new ProducerRecord<>(kafkaConfiguration.getTopicName(), 1L, randomEmployee));
 
         producer.flush();
         producer.close();
