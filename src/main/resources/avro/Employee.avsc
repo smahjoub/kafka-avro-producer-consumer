@@ -1,0 +1,11 @@
+{
+  "type": "record", 
+  "name": "Employee", 
+  "namespace": "com.smahjoub.avroproducer.models",
+  "fields": [
+      {"name": "name", "type": "string"},
+      {"name": "age", "type": "int"},
+      {"name": "emails", "type": {"type": "array", "items": "string"}},
+      {"name": "boss", "type": ["Employee","null"]}
+  ]
+}

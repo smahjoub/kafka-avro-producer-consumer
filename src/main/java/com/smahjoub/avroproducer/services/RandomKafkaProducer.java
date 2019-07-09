@@ -4,10 +4,12 @@ package com.smahjoub.avroproducer.services;
 import com.google.inject.Inject;
 import com.smahjoub.avroproducer.configuration.IKafkaProducerCreator;
 import com.smahjoub.avroproducer.configuration.KafkaConfiguration;
+
 import com.smahjoub.avroproducer.models.Employee;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class RandomKafkaProducer implements IKafkaProducer {
@@ -27,17 +29,21 @@ public class RandomKafkaProducer implements IKafkaProducer {
 
         Producer<Long, Employee> producer = kafkaProducerCreator.createProducer();
 
-        final Employee randomEmployee = new Employee("Saif Eddine Mahjoub",
-                28,
-                new String[] { "mahjoub.saifeddine@server.domain" });
+        final Employee randomEmployee = Employee.newBuilder()
+                .setName("Saif eddine Mahjoub")
+                .setAge(28)
+                .setEmails(Arrays.asList("saifeddine.mahjoub@server.domain"))
+                .setBoss(null)
+                .build();
+
 
         IntStream.range(1, 2).forEach(index->{
             producer.send(new ProducerRecord<>(kafkaConfiguration.getTopicName(), 1L * index, randomEmployee));
         });
 
-
         producer.flush();
         producer.close();
+
 
     }
 }
