@@ -6,9 +6,9 @@ public class KafkaConfiguration {
 
     private String kafkaBrokers = "localhost:9092";
 
-    private String topicName = "NEW_EMPLOYEES";
+    private String topicName = "NEWEMPLOYEES";
 
-    private String schemaRegistry = "localhost:8081";
+    private String schemaRegistry = "http://localhost:8081";
 
     public KafkaConfiguration(){
 
