@@ -1,2 +1,2 @@
-# kafka-avro-producer
-This application is used to publish avro messages to Kafka.
+# kafka-avro-producer-consumer
+This is a sample example of applications is used to publish and consume avro messages using confluent.
