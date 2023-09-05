@@ -13,7 +13,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <jdk.version>1.8</jdk.version>
         <main.class>com.smahjoub.avroconsumer.Application</main.class>
-        <kafka.version>2.0.0</kafka.version>
+        <kafka.version>5.3.0-ccs</kafka.version>
         <avro.version>1.8.2</avro.version>
         <confluent.version>3.3.1</confluent.version>
     </properties>
